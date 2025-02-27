@@ -1,6 +1,6 @@
 ﻿namespace COMP003A.ZooManagementSystem
 {
-    public abstract class Animal
+    abstract class Animal
     {
         // Fields
         private string _name;

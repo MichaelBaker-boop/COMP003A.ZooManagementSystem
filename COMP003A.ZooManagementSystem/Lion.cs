@@ -1,16 +1,19 @@
 ﻿namespace COMP003A.ZooManagementSystem
 {
-    internal class Lion : Animal
+    class Lion : Animal
     {
+        public string LionName { get; set; }
+        public string LionSpecies { get; set; }
+
         /// <summary>
         /// Constructs a lion with name and species.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="species"></param>
-        public Lion(string name, string species)
+        /// <param name="nameLion"></param>
+        /// <param name="speciesLion"></param>
+        public Lion(string nameLion, string speciesLion)
         {
-            Name = name;
-            Species = species;
+            LionName = nameLion;
+            LionSpecies = speciesLion;
         }
         /// <summary>
         /// Shows the sound a lion makes.
