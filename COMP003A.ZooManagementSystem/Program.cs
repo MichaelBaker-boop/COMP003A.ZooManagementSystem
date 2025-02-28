@@ -9,7 +9,7 @@ namespace COMP003A.ZooManagementSystem
 {
     internal class Program
     {
-        public void Main(string[] args)
+        public static void Main(string[] args)
         {
             
             int menuSelection = 0;
