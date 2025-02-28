@@ -4,39 +4,7 @@
     {
         public string LionName
         {
-            get 
-            {
-                try
-                {
-                    if (string.IsNullOrWhiteSpace(Name))
-                    {
-                        throw new InvalidDataException("The name cannot be null or empty. Please try again.");
-                    }
-                    return Name;
-                }
-                catch (Exception e)
-                {
-                 
-                    Console.WriteLine($"Invalid input: {e.Message}");
-                    throw e;
-                }
-                
-            }
-            set
-            {
-                try
-                {
-                    if (string.IsNullOrWhiteSpace(value))
-                    {
-                        throw new InvalidDataException(nameof(value));
-                    }
-                    Name = value;
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine($"Invalid input: {e.Message}");
-                }
-            }
+            get; set;
         }
         public string LionSpecies { get; set; }
 

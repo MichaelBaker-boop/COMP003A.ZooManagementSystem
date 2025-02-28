@@ -2,15 +2,16 @@
 // Course: COMP-003A
 // Faculty: Jonathan Cruz
 // Purpose: Zoo management system demonstrating inheritance, abstraction, polymorphism, and method overloading in C#
+using System.ComponentModel.Design;
 using System.Security.Cryptography.X509Certificates;
 
 namespace COMP003A.ZooManagementSystem
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public void Main(string[] args)
         {
-            List<Animal> animal = new List<Animal>();
+            
             int menuSelection = 0;
             Console.WriteLine("Welcome to the Zoo Management System!");
 
@@ -29,29 +30,19 @@ namespace COMP003A.ZooManagementSystem
 
                 if (menuSelection == 1)
                 {
-                    Animal myLion = new Lion("Simba", "Mountain");
-                    Console.WriteLine("Enter the name of the lion: ");
-                    myLion.Name = Console.ReadLine();
-                    Console.WriteLine("Enter the species of the lion: ");
-                    myLion.Species = Console.ReadLine();
-                    Console.WriteLine($"{myLion.Name}, {myLion.Species}");
-                    animal.Add(myLion);
-
-                    Console.WriteLine("Lion added successfully");
-        
+                    Program.OptionOne();
+                    
                 }
+                
+        
+                
                 if (menuSelection == 2)
                 {
                     Console.WriteLine("Option 2");
                 }
                 if (menuSelection == 3)
                 {
-                    Console.WriteLine("Option 3");
-                    Console.WriteLine("Animal List: ");
-                    for (int i = 0; i < animal.Count; i++) 
-                    {
-                        Console.WriteLine($"{animal[i].Name}, {animal[i].Species}\n");
-                    }
+                    Program.OptionThree();
                 }
                 if (menuSelection == 4)
                 {
@@ -64,6 +55,53 @@ namespace COMP003A.ZooManagementSystem
                 }
             }
 
+        }
+        public static void OptionOne() 
+        {
+            AnimalList animal = new AnimalList();
+
+
+            bool validInput = false;
+
+
+            Animal myLion = new Lion("Simba", "Mountain");
+            while (!validInput)
+            {
+
+                Console.WriteLine("Enter the name of the lion: ");
+                myLion.Name = Console.ReadLine();
+                if (string.IsNullOrEmpty(myLion.Name))
+                {
+                    Console.WriteLine("The input cannot be null or empty");
+                }
+                else
+                {
+                    break;
+                }
+            }
+            while (!validInput)
+            {
+                Console.WriteLine("Enter the species of the lion: ");
+                myLion.Species = Console.ReadLine();
+                if (string.IsNullOrEmpty(myLion.Species))
+                {
+                    Console.WriteLine("The input cannot be null or empty");
+                }
+                else
+                {
+                    validInput = true;
+                }
+            }
+
+            Console.WriteLine($"{myLion.Name}, {myLion.Species}");
+            animal.AddAnimal(myLion);
+            Console.WriteLine("Lion added successfully");
+        }
+        public static void OptionTwo() { }
+        public static void OptionThree()
+        {
+            AnimalList animal = new AnimalList();
+            animal.DisplayAnimals();
         }
         
         

@@ -9,8 +9,21 @@
         // Properties
         public string Name
         {
-            get { return _name; }
-            set { _name = value; }
+            get 
+            {
+
+               
+                    return _name;
+                
+                
+            }
+            set 
+            {
+               
+                    _name = value;
+               
+               
+            }
         }
 
         public string Species
