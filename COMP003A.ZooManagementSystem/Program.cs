@@ -2,16 +2,16 @@
 // Course: COMP-003A
 // Faculty: Jonathan Cruz
 // Purpose: Zoo management system demonstrating inheritance, abstraction, polymorphism, and method overloading in C#
+using System.Security.Cryptography.X509Certificates;
+
 namespace COMP003A.ZooManagementSystem
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            List<Animal> animal = new List<Animal>();
             int menuSelection = 0;
-            List<string> animalNames = new List<string>();
-            List<string> animalSpecies = new List<string>();
-            List<int> animalAges = new List<int>();
             Console.WriteLine("Welcome to the Zoo Management System!");
 
             bool menu = true;
@@ -29,13 +29,16 @@ namespace COMP003A.ZooManagementSystem
 
                 if (menuSelection == 1)
                 {
-                    Console.WriteLine("Option 1");
-                    Console.WriteLine("Name of Lion: ");
-                    animalNames.Add(Console.ReadLine());
-                    Console.WriteLine("Species of Lion: ");
-                    animalSpecies.Add(Console.ReadLine());
-                    Console.WriteLine("Age of Lion: ");
-                    animalAges.Add(int.Parse(Console.ReadLine()));
+                    Animal myLion = new Lion("Simba", "Mountain");
+                    Console.WriteLine("Enter the name of the lion: ");
+                    myLion.Name = Console.ReadLine();
+                    Console.WriteLine("Enter the species of the lion: ");
+                    myLion.Species = Console.ReadLine();
+                    Console.WriteLine($"{myLion.Name}, {myLion.Species}");
+                    animal.Add(myLion);
+
+                    Console.WriteLine("Lion added successfully");
+        
                 }
                 if (menuSelection == 2)
                 {
@@ -44,6 +47,11 @@ namespace COMP003A.ZooManagementSystem
                 if (menuSelection == 3)
                 {
                     Console.WriteLine("Option 3");
+                    Console.WriteLine("Animal List: ");
+                    for (int i = 0; i < animal.Count; i++) 
+                    {
+                        Console.WriteLine($"{animal[i].Name}, {animal[i].Species}\n");
+                    }
                 }
                 if (menuSelection == 4)
                 {
@@ -58,6 +66,8 @@ namespace COMP003A.ZooManagementSystem
 
         }
         
+        
 
     }
 }
+

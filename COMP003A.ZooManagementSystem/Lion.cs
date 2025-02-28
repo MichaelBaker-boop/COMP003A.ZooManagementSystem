@@ -1,6 +1,6 @@
 ﻿namespace COMP003A.ZooManagementSystem
 {
-    class Lion : Animal
+    public class Lion : Animal
     {
         public string LionName
         {
@@ -57,5 +57,6 @@
         {
             Console.WriteLine("The lion roars!");
         }
+        
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace COMP003A.ZooManagementSystem
 {
-    abstract class Animal
+    public abstract class Animal
     {
         // Fields
         private string _name;
@@ -20,5 +20,6 @@
         }
 
         public abstract void MakeSound();
+        
     }
 }
