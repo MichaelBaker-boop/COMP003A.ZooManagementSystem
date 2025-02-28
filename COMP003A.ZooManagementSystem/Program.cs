@@ -11,7 +11,7 @@ namespace COMP003A.ZooManagementSystem
     {
         public static void Main(string[] args)
         {
-            
+            List<Animal> animal = new List<Animal>();
             int menuSelection = 0;
             Console.WriteLine("Welcome to the Zoo Management System!");
 
@@ -30,8 +30,42 @@ namespace COMP003A.ZooManagementSystem
 
                 if (menuSelection == 1)
                 {
-                    Program.OptionOne();
-                    
+                    bool validInput = false;
+
+
+                    Animal myLion = new Lion("Simba", "Mountain");
+                    while (!validInput)
+                    {
+
+                        Console.WriteLine("Enter the name of the lion: ");
+                        myLion.Name = Console.ReadLine();
+                        if (string.IsNullOrEmpty(myLion.Name))
+                        {
+                            Console.WriteLine("The input cannot be null or empty");
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    while (!validInput)
+                    {
+                        Console.WriteLine("Enter the species of the lion: ");
+                        myLion.Species = Console.ReadLine();
+                        if (string.IsNullOrEmpty(myLion.Species))
+                        {
+                            Console.WriteLine("The input cannot be null or empty");
+                        }
+                        else
+                        {
+                            validInput = true;
+                        }
+                    }
+
+                    Console.WriteLine($"{myLion.Name}, {myLion.Species}");
+                    animal.Add(myLion);
+                    Console.WriteLine("Lion added successfully");
+
                 }
                 
         
@@ -42,7 +76,10 @@ namespace COMP003A.ZooManagementSystem
                 }
                 if (menuSelection == 3)
                 {
-                    Program.OptionThree();
+                    for (int i = 0; i < animal.Count; i++)
+                    {
+                        Console.WriteLine($"{animal[i].Name}, {animal[i].Species}");
+                    }
                 }
                 if (menuSelection == 4)
                 {
@@ -56,53 +93,8 @@ namespace COMP003A.ZooManagementSystem
             }
 
         }
-        public static void OptionOne() 
-        {
-            AnimalList animal = new AnimalList();
-
-
-            bool validInput = false;
-
-
-            Animal myLion = new Lion("Simba", "Mountain");
-            while (!validInput)
-            {
-
-                Console.WriteLine("Enter the name of the lion: ");
-                myLion.Name = Console.ReadLine();
-                if (string.IsNullOrEmpty(myLion.Name))
-                {
-                    Console.WriteLine("The input cannot be null or empty");
-                }
-                else
-                {
-                    break;
-                }
-            }
-            while (!validInput)
-            {
-                Console.WriteLine("Enter the species of the lion: ");
-                myLion.Species = Console.ReadLine();
-                if (string.IsNullOrEmpty(myLion.Species))
-                {
-                    Console.WriteLine("The input cannot be null or empty");
-                }
-                else
-                {
-                    validInput = true;
-                }
-            }
-
-            Console.WriteLine($"{myLion.Name}, {myLion.Species}");
-            animal.AddAnimal(myLion);
-            Console.WriteLine("Lion added successfully");
-        }
-        public static void OptionTwo() { }
-        public static void OptionThree()
-        {
-            AnimalList animal = new AnimalList();
-            animal.DisplayAnimals();
-        }
+   
+        
         
         
 
