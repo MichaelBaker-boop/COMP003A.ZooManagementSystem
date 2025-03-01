@@ -52,7 +52,7 @@ namespace COMP003A.ZooManagementSystem
                             myLion.Name = Console.ReadLine();
                             if (string.IsNullOrEmpty(myLion.Name))
                             {
-                                Console.WriteLine("The input cannot be null or empty");
+                                Console.WriteLine("The name cannot be null or empty");
                             }
                             else
                             {
@@ -66,7 +66,7 @@ namespace COMP003A.ZooManagementSystem
                             myLion.Species = Console.ReadLine();
                             if (string.IsNullOrEmpty(myLion.Species))
                             {
-                                Console.WriteLine("The input cannot be null or empty");
+                                Console.WriteLine("The species cannot be null or empty");
                             }
                             else
                             {
@@ -81,14 +81,52 @@ namespace COMP003A.ZooManagementSystem
 
                     case 2:
 
-                        Console.WriteLine("Option 2");
-                        break;
-                    case 3:
-                    
-                        for (int i = 0; i < animal.Count; i++)
+                        bool validInput2 = false; // Initialize test of user input
+
+                        Animal myParrot = new Parrot("Polly", "Pirate"); // Create new Parrot Object
+
+                        while (!validInput2) // While loop to get a name that is not null or empty
                         {
-                            Console.WriteLine($"{animal[i].Name}, {animal[i].Species}");
+                            Console.WriteLine("Enter the name of the parrot: ");
+                            myParrot.Name = Console.ReadLine();
+                            if (string.IsNullOrEmpty(myParrot.Name))
+                            {
+                                Console.WriteLine("The name cannot be null or empty");
+                            }
+                            else
+                            {
+                                break;
+                            }
                         }
+
+                        while (!validInput2) // While loop to get a species that is not null or empty
+                        {
+                            Console.WriteLine("Enter the species of the parrot: ");
+                            myParrot.Species = Console.ReadLine();
+                            if (string.IsNullOrEmpty(myParrot.Species))
+                            {
+                                Console.WriteLine("The species cannot be null or empty");
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+
+                        Console.WriteLine($"{myParrot.Name}, {myParrot.Species}"); // Check inputs; remove or comment before submission
+                        animal.Add(myParrot);
+                        Console.WriteLine("Parrot added successfully");
+                        break;
+
+                    case 3:
+
+                        Console.WriteLine("Displaying all animals: ");
+                        foreach (var animals in animal)
+                        {
+                            animals.MakeSound();
+                            Console.WriteLine($"({animals.Name}, {animals.Species})");
+                        }
+
                         break;
                     case 4:   
 

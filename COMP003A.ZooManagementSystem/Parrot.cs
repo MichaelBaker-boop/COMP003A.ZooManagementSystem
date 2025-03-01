@@ -4,15 +4,19 @@ namespace COMP003A.ZooManagementSystem
 {
     internal class Parrot : Animal
     {
+
+        public string ParrotName { get; set; }
+        public string ParrotSpecies { get; set; }
+
         /// <summary>
         /// Constructs a parrot with name and species.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="species"></param>
-        public Parrot(string name, string species)
+        /// <param name="nameParrot"></param>
+        /// <param name="speciesParrot"></param>
+        public Parrot(string nameParrot, string speciesParrot)
         {
-            Name = name;
-            Species = species;
+            ParrotName = nameParrot;
+            ParrotSpecies = speciesParrot;
         }
         /// <summary>
         /// Shows the sound a parrot makes.
