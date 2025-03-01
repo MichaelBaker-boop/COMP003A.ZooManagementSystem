@@ -33,7 +33,7 @@ namespace COMP003A.ZooManagementSystem
                 catch (Exception ex)
                 {
                     Console.WriteLine("Input invalid!");
-                    Console.WriteLine(ex.Message);
+                    Console.Write(ex.Message);
                     continue;
                 }
                 
@@ -48,7 +48,7 @@ namespace COMP003A.ZooManagementSystem
 
                         while (!validInput) // While loop to get a name that is not null or empty
                         {
-                            Console.WriteLine("Enter the name of the lion: ");
+                            Console.Write("Enter the name of the lion: ");
                             myLion.Name = Console.ReadLine();
                             if (string.IsNullOrEmpty(myLion.Name))
                             {
@@ -62,7 +62,7 @@ namespace COMP003A.ZooManagementSystem
 
                         while (!validInput) // While loop to get a species that is not null or empty
                         {
-                            Console.WriteLine("Enter the species of the lion: ");
+                            Console.Write("Enter the species of the lion: ");
                             myLion.Species = Console.ReadLine();
                             if (string.IsNullOrEmpty(myLion.Species))
                             {
@@ -87,7 +87,7 @@ namespace COMP003A.ZooManagementSystem
 
                         while (!validInput2) // While loop to get a name that is not null or empty
                         {
-                            Console.WriteLine("Enter the name of the parrot: ");
+                            Console.Write("Enter the name of the parrot: ");
                             myParrot.Name = Console.ReadLine();
                             if (string.IsNullOrEmpty(myParrot.Name))
                             {
@@ -101,7 +101,7 @@ namespace COMP003A.ZooManagementSystem
 
                         while (!validInput2) // While loop to get a species that is not null or empty
                         {
-                            Console.WriteLine("Enter the species of the parrot: ");
+                            Console.Write("Enter the species of the parrot: ");
                             myParrot.Species = Console.ReadLine();
                             if (string.IsNullOrEmpty(myParrot.Species))
                             {
