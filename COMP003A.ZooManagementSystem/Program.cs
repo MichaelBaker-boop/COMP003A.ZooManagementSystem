@@ -74,7 +74,7 @@ namespace COMP003A.ZooManagementSystem
                             }
                         }
 
-                        Console.WriteLine($"{myLion.Name}, {myLion.Species}"); // Check inputs; remove or comment before submission
+                        // Console.WriteLine($"{myLion.Name}, {myLion.Species}"); // Check inputs; remove or comment before submission
                         animal.Add(myLion);
                         Console.WriteLine("Lion added successfully");
                         break;
@@ -113,7 +113,7 @@ namespace COMP003A.ZooManagementSystem
                             }
                         }
 
-                        Console.WriteLine($"{myParrot.Name}, {myParrot.Species}"); // Check inputs; remove or comment before submission
+                        // Console.WriteLine($"{myParrot.Name}, {myParrot.Species}"); // Check inputs; remove or comment before submission
                         animal.Add(myParrot);
                         Console.WriteLine("Parrot added successfully");
                         break;

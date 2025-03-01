@@ -6,7 +6,7 @@
         public static void DescribeAnimal(string name)
         {
             
-            Console.WriteLine("Describe Animal (name only): ");
+            
             Console.WriteLine($"Animal Name: {name}");
             
         }
