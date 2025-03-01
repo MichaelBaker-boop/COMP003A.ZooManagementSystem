@@ -26,8 +26,17 @@ namespace COMP003A.ZooManagementSystem
                 Console.WriteLine("4. Describe an Animal");
                 Console.WriteLine("5. Exit");
 
-                menuSelection = int.Parse(Console.ReadLine());
-
+                try
+                {
+                    menuSelection = int.Parse(Console.ReadLine());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Input invalid!");
+                    Console.WriteLine(ex.Message);
+                    continue;
+                }
+                
 
                 switch (menuSelection)
                 {
