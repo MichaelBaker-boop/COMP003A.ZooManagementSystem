@@ -3,19 +3,24 @@
     internal class ZooUtility
     {
 
-        public string DescribeAnimal(string name)
+        public static void DescribeAnimal(string name)
         {
-            return name;
+            
+            Console.WriteLine("Describe Animal (name only): ");
+            Console.WriteLine($"Animal Name: {name}");
+            
         }
 
-        public string DescribeAnimal(string name, string species)
+        public static void DescribeAnimal(string name, string species)
         {
-            return name + species;
+            DescribeAnimal(name);
+            Console.WriteLine($", Species: {species}");
         }
 
-        public string DescribeAnimal(string name, string species, int age)
+        public static void DescribeAnimal(string name, string species, int age)
         {
-            return name + species + age;
+            DescribeAnimal(name, species);
+            Console.WriteLine($", Age: {age}");
         }
 
     }

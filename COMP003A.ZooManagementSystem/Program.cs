@@ -130,7 +130,9 @@ namespace COMP003A.ZooManagementSystem
                         break;
                     case 4:   
 
-                        Console.WriteLine("Option 4");
+                        ZooUtility.DescribeAnimal("Simba");
+                        ZooUtility.DescribeAnimal("Polly", "Pirate");
+                        ZooUtility.DescribeAnimal("Edgar", "Elephant", 2);
                         break;
                     case 5:
                     
